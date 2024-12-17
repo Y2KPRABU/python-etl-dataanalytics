@@ -1,5 +1,4 @@
 import pandas as pd
-import datetime
 
 def check_if_valid_data(df: pd.DataFrame):
     """

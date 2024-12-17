@@ -1,16 +1,27 @@
-
+import os
 import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq
+import logging
+
 from azure.storage.filedatalake import DataLakeServiceClient
+# Env variables
+from dotenv import load_dotenv
+
+
+# Logger initialization
+logging.basicConfig(format='[%(levelname)s]: %(message)s', level=logging.DEBUG)
+
+# Recover env variables
+load_dotenv()
 
 # Replace with your details
-account_name = 'sunadls'
-file_system_name = 'sunfs' #filesystem is same as container in ADLS terms
-directory_name = 'artists'
-file_name = 'artistspot.parquet'
-local_file_path = 'localartistspot.parquet'
-sas_token = 'sv=2022-11-02&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2024-12-18T01:48:36Z&st=2024-12-17T17:48:36Z&spr=https&sig=WiJm1p2a4Y42oPDwBpkSMFlKhCVqUHWgVnvApYm2glk%3D'
+account_name = os.getenv('account_name')#'sunadls'
+file_system_name = os.getenv('file_system_name')#'sunfs' #filesystem is same as container in ADLS terms
+directory_name = os.getenv('directory_name')#'artists'
+file_name = os.getenv('file_name')#'artistspot.parquet'
+local_file_path = os.getenv('local_file_path')#'localartistspot.parquet'
+sas_token = os.getenv('sas_token')#'sv=2022-11-02&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2024-12-18T01:48:36Z&st=2024-12-17T17:48:36Z&spr=https&sig=WiJm1p2a4Y42oPDwBpkSMFlKhCVqUHWgVnvApYm2glk%3D'
 # Create a DataFrame
 def createFileFromdata(pandas_dataframe):
 

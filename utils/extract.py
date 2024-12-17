@@ -16,7 +16,7 @@ load_dotenv()
 # Database Location
 DATABASE_LOCATION = os.getenv('DATABASE_LOCATION')
 # User ID on Spotify
-USER_ID = os.getenv('USER_ID')
+#USER_ID = os.getenv('USER_ID')
 # Token generated on Spotify for Developers
 TOKEN = os.getenv('TOKEN')
 REQ1=os.getenv('REQ_1')
