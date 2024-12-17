@@ -32,11 +32,11 @@ curl -X POST "https://accounts.spotify.com/api/token" \
      -d "grant_type=client_credentials&client_id=your-client-id&client_secret=your-client-secret"
 curl -X POST "https://accounts.spotify.com/api/token" \
      -H "Content-Type: application/x-www-form-urlencoded" \
-     -d "grant_type=client_credentials&client_id=a191cb83822f41ddbf96abed791c948b&client_secret=bc752de6f811427687731d64f4e4924d"
-{"access_token":"BQAynPBQWa-DBgR4Q2BAu3bP8alwvKLrXS5AvWxgOwhm_lB36aJEJtKwEL_Db502vylAky913hhWH4dFFGt8e2h3_rTq3eEfeS3nkXyZEUp6_rInNIo","token_type":"Bearer","expires_in":3600}% 
+     -d "grant_type=client_credentials&client_id='yourid'&client_secret='secretsample'"
+{"access_token":"actual_token_returned","token_type":"Bearer","expires_in":3600}% 
 
 curl "https://api.spotify.com/v1/artists/4Z8W4fKeB5YxbusRsdQVPb" \
-     -H "Authorization: Bearer  BQAynPBQWa-DBgR4Q2BAu3bP8alwvKLrXS5AvWxgOwhm_lB36aJEJtKwEL_Db502vylAky913hhWH4dFFGt8e2h3_rTq3eEfeS3nkXyZEUp6_rInNIo"
+     -H "Authorization: Bearer  actual_token_returned"
 
 
 If you want to use poetry instead, you can skip the first 3 steps and run `poetry install`. You need to keep in mind that, to run the code, you'll need to execute: `poetry run python3 main.py`
