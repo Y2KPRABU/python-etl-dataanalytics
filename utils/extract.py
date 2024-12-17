@@ -22,7 +22,7 @@ TOKEN = os.getenv('TOKEN')
 REQ1=os.getenv('REQ_1')
 REQ2=os.getenv('REQ_2')
 REQ_TOKEN=os.getenv('REQ_TOKEN')
-
+TOKEN_Client_Sec=os.getenv('TOKEN_Client_Sec')
 
 def get_token():
     """
@@ -41,7 +41,7 @@ def get_token():
         r = requests.post(
             REQ_TOKEN,
             headers = headers,
-            data= "grant_type=client_credentials&client_id=a191cb83822f41ddbf96abed791c948b&client_secret=bc752de6f811427687731d64f4e4924d") 
+            data= TOKEN_Client_Sec) 
     except:
         raise Exception(f'The Spotify request went wrong')
     

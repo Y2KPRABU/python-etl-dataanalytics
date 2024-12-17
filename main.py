@@ -19,5 +19,9 @@ if __name__ == '__main__':
 
     # Loading data process
     logging.info('Starting loading process...')
+    
     createFileFromdata(song_df)
     pushtoADLS()
+    
+    logging.info('COMPLETED loading process...')
+
