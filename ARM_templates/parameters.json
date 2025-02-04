@@ -7,6 +7,9 @@
     },
     "location": {
       "value": "[resourceGroup().location]"
+    },
+    "storageAccounts_sunadls_name": {
+      "value": "sunadls"
     }
   }
 }
